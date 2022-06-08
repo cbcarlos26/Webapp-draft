@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de vehiculo {{vehiculo.id}}</title>
+</head>
+<body>
+    <h2 align="center">Vehiculo {{vehiculo.placa}}</h2>
+    {% if vehiculo.imagen %}
+    <img src="C:/curso/Vehiculos/vehiculos/photos/{{vehiculo.imagen}}" alt="Vehiculo" align="center">
+    {% endif %}
+    <p align="center">
+        Nombre de propietario: {{vehiculo.nombre_p}} {{vehiculo.apellido_p}},
+        Identificacion: {{vehiculo.cedula_p}}, Contacto: {{vehiculo.contacto_p}}
+    </p>
+    <p align="center">Marca: {{vehiculo.marca}}, Modelo: {{vehiculo.modelo}}, Color: {{vehiculo.color}}</p>
+    <p align="center">Origen: {{vehiculo.origen}}, Fecha de ingreso: {{vehiculo.fecha_in}}</p>
+</body>
+</html>

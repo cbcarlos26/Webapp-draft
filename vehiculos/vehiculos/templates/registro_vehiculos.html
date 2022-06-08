@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de vehiculos</title>
+</head>
+<body>
+    <h2 align="center">REGISTRO DE ENTRADA</h2>
+    <p>No. de registros {{no_vehiculos}}</p>
+    <table style="border-collapse:collapse" border="3px" cellpadding="5px" align="center">
+        <caption><h3>Listado de vehiculos ingresados</h3></caption>
+        <thead style="background-color:skyblue">
+            <tr>
+                <th>FECHA</th>
+                <th>PLACA</th>
+                <th>MARCA</th>
+                <th>CEDULA</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>ORIGEN</th>
+                <th>DETALLE</th>
+                <th>EDITAR</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vehiculo in vehiculos %}
+            <tr>
+                <td>{{vehiculo.fecha_in}}</td>
+                <td>{{vehiculo.placa}}</td>
+                <td>{{vehiculo.marca}}</td>
+                <td>{{vehiculo.cedula_p}}</td>
+                <td>{{vehiculo.nombre_p}}</td>
+                <td>{{vehiculo.apellido_p}}</td>
+                <td>{{vehiculo.origen}}</td>
+                <td><a href="ver_detalle/{{vehiculo.id}}" style="text-decoration:none">Ver detalle</a></td>
+                <td><a href="editar_vehiculo/{{vehiculo.id}}"style="text-decoration:none">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

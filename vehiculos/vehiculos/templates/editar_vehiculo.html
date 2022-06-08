@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1 align="center">Editar vehiculo</h1>
+    <hr/>
+    <h3 align="center">Agregar vehiculo</h3>
+    <div align="center" style="padding:10px">
+        <form method="POST" enctype="multipart/form-data">
+            <table cellpadding="8px" align="center">
+                {{formaVehiculo}}
+            </table>
+            <button type="submit" style="padding:5px; width:100px">
+                Enviar
+            </button>
+        {% csrf_token %}
+        </form>
+    </div>
+</body>
+</html>
