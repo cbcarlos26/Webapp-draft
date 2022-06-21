@@ -42,5 +42,5 @@ class VehiculoForm(ModelForm):
                                                  'placeholder':'Apellido de propietario'}),
             'contacto_p': forms.TextInput(attrs={'class':'form-control', 'size':'100',
                                                  'placeholder':'Numero de contacto de propietario'}),
-            'imagen': forms.FileInput(attrs={'class':'form-control', 'align':'center'}),
+            'imagen': forms.ClearableFileInput(attrs={'class':'form-control', 'align':'center'}),
             'origen':forms.Select(attrs={'class':'form-control'})}

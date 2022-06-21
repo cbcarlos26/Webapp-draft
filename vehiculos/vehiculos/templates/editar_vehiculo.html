@@ -1,23 +1,29 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
 </head>
 <body>
-    <h1 align="center">Editar vehiculo</h1>
-    <hr/>
-    <h3 align="center">Agregar vehiculo</h3>
-    <div align="center" style="padding:10px">
-        <form method="POST" enctype="multipart/form-data">
-            <table cellpadding="8px" align="center">
-                {{formaVehiculo}}
-            </table>
-            <button type="submit" style="padding:5px; width:100px">
-                Enviar
-            </button>
-        {% csrf_token %}
-        </form>
-    </div>
+    {% block content %}
+    <center>
+        <h1>Editar vehiculo</h1>
+        <hr/>
+        <div style="padding:3px">
+            <form method="POST" enctype="multipart/form-data">
+                <table cellpadding="2px">
+                    {{formaVehiculo}}
+                </table>
+                <br/>
+                <button type="submit" style="padding:5px; width:100px; background-color:blue; color:white"
+                        class="btn btn-outline-secondary">
+                    Enviar
+                </button>
+            {% csrf_token %}
+            </form>
+        </div>
+    </center>
+    {% endblock %}
 </body>
 </html>

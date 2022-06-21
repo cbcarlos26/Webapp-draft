@@ -15,7 +15,7 @@ class Vehiculo(models.Model):
     marca = models.CharField('Marca de vehiculo', max_length=20)
     modelo = models.CharField('Modelo de vehiculo', max_length=20)
     color = models.CharField('Color de vehiculo', max_length=15)
-    imagen = models.ImageField(upload_to='photos')
+    imagen = models.ImageField(upload_to='photos/photos')
     cedula_p = models.CharField('Cedula de propietario', max_length=15)
     nombre_p = models.CharField('Nombre de propietario', max_length=25)
     apellido_p = models.CharField('Apellido de propietario', max_length=25)

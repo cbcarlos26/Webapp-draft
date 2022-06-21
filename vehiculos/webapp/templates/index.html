@@ -1,26 +1,29 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
 </head>
 <body>
-    <h1 align="center">Bienvenido al inicio de la aplicacion</h1>
-    <a href="registro_vehiculos" style="background-color:blue; padding:5px; color:white; text-decoration:none">
-        REGISTRO</a>
-    <hr/>
-    <br/>
-    <h3 align="center">Agregar vehiculo</h3>
-    <div align="center" style="padding:5px">
-        <form method="POST" enctype="multipart/form-data">
-            <table align="center" cellpadding="10px">
-                {{formaVehiculo}}
-            </table>
-            <button type="submit" style="padding:5px; width:100px">
-                Enviar
-            </button>
-        {% csrf_token %}
-        </form>
-    </div>
+    {% block content %}
+        <h1 align="center">Bienvenido al inicio de la aplicacion</h1>
+        <a href="registro_vehiculos" style="background-color:blue; padding:5px; color:white; text-decoration:none">
+            REGISTRO</a>
+        <hr/>
+        <h5 align="center">Agregar vehiculo</h5>
+        <div align="center" style="padding:3px">
+            <form method="POST" enctype="multipart/form-data">
+                <table align="center" cellpadding="3px">
+                    {{formaVehiculo}}
+                </table>
+                <button type="submit" style="padding:5px; width:100px; background-color:blue; color:white"
+                        class="btn btn-outline-secondary">
+                    Enviar
+                </button>
+            {% csrf_token %}
+            </form>
+        </div>
+    {% endblock %}
 </body>
 </html>

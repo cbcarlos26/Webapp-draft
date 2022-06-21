@@ -7,15 +7,15 @@
 </head>
 <body>
     {% block content %}
-        <center>
+    <center>
         <h2>REGISTRO DE ENTRADA</h2>
-        <p align="left">No. de registros {{no_vehiculos}}</p>
+        <p align="left">No. de registros encontrados {{no_vehiculos}}</p>
         <form class="d-flex" method=POST action="{% url 'vehiculos_buscados' %}">
             {% csrf_token %}
             <input class="form-control me-2" type="Search" name="buscado" placeholder="Placa">
             <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
-            <br/>
+        <br/>
         <table style="border-collapse:collapse" border="1px" cellpadding="5px">
             <thead style="background-color:skyblue">
                 <tr>
@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for vehiculo in vehiculos %}
+                {% for vehiculo in vehiculos_b %}
                 <tr>
                     <td>{{vehiculo.fecha_in}}</td>
                     <td>{{vehiculo.placa}}</td>
@@ -46,25 +46,7 @@
                 {% endfor %}
             </tbody>
         </table>
-            <br/>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-            {% if vehiculos.has_previous %}
-                <li class="page-item"><a class="page-link" href="?page=1">&laquo Frist</a></li>
-                <li class="page-item"><a class="page-link" href="?page={{vehiculos.previous_page_number}}">Previous</a></li>
-            {% endif %}
-            {% for i in nums %}
-                <li class="page-item disabled"><a class="page-link" href="?page={{forloop.counter}}">
-                    {{forloop.counter}}
-                </a> </li>
-            {% endfor %}
-            {% if vehiculos.has_next %}
-                <li class="page-item"><a class="page-link" href="?page={{vehiculos.next_page_number}}">Next</a></li>
-                <li class="page-item"><a class="page-link" href="?page={{vehiculos.paginator.num_pages}}">Last &raquo</a></li>
-            {% endif %}
-            </ul>
-        </nav>
-        </center>
+    </center>
     {% endblock %}
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingreso</title>
+</head>
+<body>
+    <form class="d-flex" method=POST action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Usuario</label>
+            <input class="form-control me-2" type="text" name="username" placeholder="Usuario">
+            <label class="form-label">Contrasena</label>
+            <input class="form-control me-2" type="password" name="password" placeholder="Contrasena">
+            <button class="btn btn-outline-primary" type="submit">Entrar</button>
+        </div>
+    </form>
+</body>
+</html>
